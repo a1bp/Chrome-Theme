@@ -2,7 +2,7 @@
 
 A high-performance, gaming-inspired New Tab override for Chrome, built with **TypeScript** and **Vite**. Features a sleek glassmorphism UI, real-time AI assistance via Groq, and deep customization options.
 
-
+![Preview](https://github.com/a1bp/Chrome-Theme/blob/main/PREVIEW/Screenshot%202026-05-15%20214005.png?raw=true)
 ## ✨ Features
 
 - **🚀 Futuristic UI**: A premium glassmorphism dashboard with neon accents and fluid animations.
