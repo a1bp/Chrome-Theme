@@ -2,7 +2,6 @@
 
 A high-performance, gaming-inspired New Tab override for Chrome, built with **TypeScript** and **Vite**. Features a sleek glassmorphism UI, real-time AI assistance via Groq, and deep customization options.
 
-![Dashboard Preview](https://raw.githubusercontent.com/placeholder-dashboard.png)
 
 ## ✨ Features
 
