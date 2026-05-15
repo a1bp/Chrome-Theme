@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIK - New Tab</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" id="dynamic-favicon" href="icons/icon128.png">
+
+</head>
+
+<body>
+
+    <div id="bg-container">
+        <video id="bg-video" autoplay muted loop playsinline style="display: none;"></video>
+        <div id="bg-image"></div>
+        <div id="bg-overlay"></div>
+        <div class="scanlines"></div>
+    </div>
+
+    <div class="ui-wrapper">
+
+        <aside class="bookmarks-widget" id="bookmarks-widget">
+            <div class="widget-header">
+                <h3><i class="fa-solid fa-layer-group"></i> QUICK_LINKS</h3>
+                <button id="add-bookmark-btn" title="ADD LINK"><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <div class="bookmarks-list" id="bookmarks-list">
+
+            </div>
+        </aside>
+
+        <header class="top-command-bar">
+            <div class="brand-block">
+                <div class="user-avatar" id="avatar-container">
+                    <img id="user-logo" src="" alt="" style="display: none;">
+                    <span id="logo-placeholder">A</span>
+                </div>
+                <div>
+                    <span class="brand-name">ANIK</span>
+                    <span class="brand-subtitle">GAMING NEW TAB</span>
+                </div>
+            </div>
+
+            <div class="system-stats">
+                <div class="stat-item">
+                    <span class="label">SYSTEM</span>
+                    <span class="value">ONLINE</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="label">MODE</span>
+                    <span class="value">FOCUS</span>
+                </div>
+                <div class="stat-divider"></div>
+                <button id="ai-mode-toggle" class="ai-btn-premium">
+                    <i class="fa-solid fa-robot"></i> AI MODE
+                </button>
+            </div>
+        </header>
+
+        <main>
+
+            <div class="gaming-widget clock-widget">
+                <div class="time-display">
+                    <h1 id="clock">00:00</h1>
+                </div>
+                <div class="date-display">
+                    <span id="date">FRIDAY, MAY 15</span>
+                </div>
+            </div>
+
+
+            <div class="search-section">
+                <div class="search-bar-wrapper">
+                    <div class="search-glow"></div>
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="search-input" placeholder="INITIATE SEARCH..." autocomplete="off">
+                    <div class="search-actions">
+                        <button id="lens-btn" title="SEARCH BY IMAGE">
+                            <i class="fa-solid fa-camera"></i>
+                        </button>
+                    </div>
+                    <div class="input-accent"></div>
+                </div>
+            </div>
+
+
+            <nav class="shortcuts-grid" aria-label="Quick bookmarks">
+                <a href="https://github.com" class="shortcut-item" title="GitHub">
+                    <div class="icon-box"><i class="fa-brands fa-github"></i></div>
+                    <span>GITHUB</span>
+                </a>
+                <a href="https://youtube.com" class="shortcut-item" title="YouTube">
+                    <div class="icon-box"><i class="fa-brands fa-youtube"></i></div>
+                    <span>YOUTUBE</span>
+                </a>
+                <a href="https://twitch.tv" class="shortcut-item" title="Twitch">
+                    <div class="icon-box"><i class="fa-brands fa-twitch"></i></div>
+                    <span>TWITCH</span>
+                </a>
+                <a href="https://discord.com" class="shortcut-item" title="Discord">
+                    <div class="icon-box"><i class="fa-brands fa-discord"></i></div>
+                    <span>DISCORD</span>
+                </a>
+                <a href="https://steamcommunity.com" class="shortcut-item" title="Steam">
+                    <div class="icon-box"><i class="fa-brands fa-steam"></i></div>
+                    <span>STEAM</span>
+                </a>
+            </nav>
+        </main>
+
+        <footer>
+            <div class="footer-left">
+                <span class="version">ANIK v1.0.0</span>
+            </div>
+            <div class="footer-right">
+                <div class="action-stack">
+                    <a href="https://mail.google.com" class="action-btn" title="Gmail" target="_blank">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="#" class="action-btn chrome-link" data-url="chrome://history" title="History">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </a>
+                    <a href="#" class="action-btn chrome-link" data-url="chrome://downloads" title="Downloads">
+                        <i class="fa-solid fa-download"></i>
+                    </a>
+                    <a href="#" class="action-btn chrome-link" data-url="chrome://bookmarks" title="Bookmarks">
+                        <i class="fa-solid fa-bookmark"></i>
+                    </a>
+                    <button id="settings-toggle" class="action-btn" title="Interface Config">
+                        <i class="fa-solid fa-gear"></i>
+                    </button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="settings-panel" class="settings-sidebar">
+        <div class="sidebar-header">
+            <h3><i class="fa-solid fa-sliders"></i> INTERFACE_CONFIG</h3>
+            <button id="close-settings" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div class="sidebar-content">
+            <div class="config-section">
+                <label>MEDIA_TYPE</label>
+                <div class="btn-group">
+                    <button id="set-image" class="active">IMG</button>
+                    <button id="set-video">VID</button>
+                </div>
+            </div>
+
+            <div class="config-section">
+                <label>SOURCE_UPLOAD</label>
+                <div class="drop-zone" id="drop-zone">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <p>DRAG & DROP MEDIA</p>
+                    <input type="file" id="media-upload" accept="image/*,video/*" hidden>
+                </div>
+            </div>
+
+            <div class="config-section">
+                <div class="slider-info">
+                    <label>BLUR_LEVEL</label>
+                    <span id="blur-val">10px</span>
+                </div>
+                <input type="range" id="blur-slider" min="0" max="30" value="10">
+            </div>
+
+            <div class="config-section">
+                <div class="slider-info">
+                    <label>DIM_LEVEL</label>
+                    <span id="opacity-val">40%</span>
+                </div>
+                <input type="range" id="opacity-slider" min="0" max="100" value="40">
+            </div>
+
+            <div class="config-section">
+                <label>GROQ_API_KEY</label>
+                <div class="api-key-wrapper">
+                    <input type="password" id="gemini-key" placeholder="PASTE_GROQ_KEY..." autocomplete="off">
+                    <button id="save-key" title="SAVE KEY"><i class="fa-solid fa-floppy-disk"></i></button>
+                </div>
+                <p class="config-hint">Get key at <a href="https://console.groq.com/keys" target="_blank">Groq Console</a></p>
+            </div>
+
+            <div class="config-section">
+                <label>LOGO_CUSTOMIZATION</label>
+                <div class="logo-upload-zone" id="logo-drop-zone">
+                    <i class="fa-solid fa-image"></i>
+                    <span>UPLOAD LOGO</span>
+                    <input type="file" id="logo-upload" accept="image/*" hidden>
+                </div>
+                <p class="config-hint">Supports PNG/JPG. Will be auto-cropped to circle.</p>
+            </div>
+
+            <div class="config-section">
+                <label>ACCENT_COLOR</label>
+                <div class="color-presets">
+                    <div class="color-dot active" style="background: #00f2ff;" data-color="#00f2ff"></div>
+                    <div class="color-dot" style="background: #ff0055;" data-color="#ff0055"></div>
+                    <div class="color-dot" style="background: #a200ff;" data-color="#a200ff"></div>
+                    <div class="color-dot" style="background: #33ff00;" data-color="#33ff00"></div>
+                    <div class="color-custom-wrapper">
+                        <input type="color" id="custom-color-picker" title="CHOOSE CUSTOM COLOR">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="bookmark-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-link"></i> REGISTER_LINK</h3>
+                <button id="close-modal" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <label>NAME</label>
+                    <input type="text" id="bm-name" placeholder="E.G. STEAM" autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <label>URL</label>
+                    <input type="text" id="bm-url" placeholder="HTTPS://..." autocomplete="off">
+                </div>
+                <button id="save-bookmark" class="save-btn">INITIALIZE LINK</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="ai-panel" class="ai-sidebar">
+        <div class="sidebar-header">
+            <h3><i class="fa-solid fa-brain"></i> ANIK AI CORE</h3>
+            <button id="close-ai" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="ai-chat-container">
+            <div id="ai-messages" class="chat-history">
+                <div class="ai-msg bot">
+                    <p>SYSTEM ONLINE. HOW CAN I ASSIST YOUR SESSION TODAY?</p>
+                </div>
+            </div>
+            <div class="ai-input-area">
+                <textarea id="ai-input" placeholder="ASK ANYTHING..." rows="1"></textarea>
+                <button id="send-ai"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/src/newtab.ts"></script>
+</body>
+
+</html>

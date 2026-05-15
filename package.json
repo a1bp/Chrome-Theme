@@ -1,0 +1,21 @@
+{
+  "name": "chrome-theme",
+  "version": "1.0.0",
+  "description": "A high-performance gaming-inspired Chrome New Tab dashboard.",
+  "main": "newtab.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "Anik",
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/chrome": "^0.1.42",
+    "@types/node": "^25.8.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.13"
+  }
+}
