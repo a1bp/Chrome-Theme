@@ -27,8 +27,8 @@ A high-performance, gaming-inspired New Tab override for Chrome, built with **Ty
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/games-tab.git
-   cd games-tab
+   git clone https://github.com/a1bp/Chrome-Theme.git
+   cd Chrome-Theme
    ```
 
 2. **Install Dependencies**:
