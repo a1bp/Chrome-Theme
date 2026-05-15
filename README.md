@@ -46,15 +46,6 @@ A high-performance, gaming-inspired New Tab override for Chrome, built with **Ty
    - Enable **Developer mode** (top right toggle).
    - Click **Load unpacked**.
    - Select the **`dist`** folder from this project directory.
-
-## 🚀 Development
-
-To start a local development server with Hot Module Replacement (HMR):
-
-```bash
-npm run dev
-```
-
 *Note: Chrome APIs (bookmarks, storage) are only active when the project is loaded as an extension from the `dist` folder.*
 
 ## ⚙️ Configuration
@@ -69,4 +60,4 @@ Contributions are welcome! Feel free to open issues or submit pull requests to e
 
 ---
 
-**Developed with ❤️ by [Anik]**
+**Developed with ❤️ by [Anik](https://github.com/a1bp)**
